@@ -9,7 +9,7 @@ pub fn derive_struct_name(item: TokenStream) -> TokenStream {
     let struct_name = &ast.ident;
 
     let expanded = quote! {
-        impl StructName for #struct_name {
+        impl struct_name::StructName for #struct_name {
             fn struct_name() -> &'static str {
                 stringify!(#struct_name)
             }
